@@ -1,56 +1,149 @@
 from pydantic import BaseModel, Field
-from typing import Optional, Any
+from typing import Optional, Any, Union, Literal
 
 
-class PropsSchema(BaseModel):
+class BaseElement(BaseModel):
+    id: str
+    elementType: str
+
+
+class BaseProps(BaseModel):
     label: str
     required: bool = False
     hidden: bool = False
-
-    placeholder: Optional[str] = None
-
-    short_label: Optional[str] = Field(
-        default=None,
-        alias="shortLabel"
-    )
-
-    query_key: Optional[str] = Field(
-        default=None,
-        alias="queryKey"
-    )
-
-    width: Optional[int] = 100
-
-    min_length: Optional[int] = Field(
-        default=None,
-        alias="minLength"
-    )
-
-    max_length: Optional[int] = Field(
-        default=None,
-        alias="maxLength"
-    )
-
-    auto_complete: Optional[str] = Field(
-        default=None,
-        alias="autoComplete"
-    )
-
-    class Config:
-        populate_by_name = True
+    width: int = 100
 
 
-class ElementSchema(BaseModel):
-    id: str
+class FullNameProps(BaseProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    minLength: int = 0
+    maxLength: int = 100
+    autocomplete: str = ""
 
-    element_type: str = Field(
-        alias="elementType"
-    )
 
-    props: PropsSchema
+class FullNameElement(BaseElement):
+    elementType: Literal["full-name"]
+    props: FullNameProps
 
-    class Config:
-        populate_by_name = True
+
+class EmailProps(BaseProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    minLength: int = 0
+    maxLength: int = 100
+    autocomplete: str = ""
+
+
+class EmailElement(BaseElement):
+    elementType: Literal["email"]
+    props: EmailProps
+
+
+class PhoneProps(BaseProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    minLength: int = 0
+    maxLength: int = 20
+    autocomplete: str = ""
+    enableCountryPicker: bool = True
+    countryCode: str = "+1"
+    validatePhone: bool = False
+
+
+class PhoneElement(BaseElement):
+    elementType: Literal["phone"]
+    props: PhoneProps
+
+
+class MultiLineProps(BaseProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    rows: int = 5
+    minLength: int = 0
+    maxLength: int = 2000
+
+
+class MultiLineElement(BaseElement):
+    elementType: Literal["multi-line"]
+    props: MultiLineProps
+
+
+class DateOfBirthProps(BaseProps):
+    queryKey: str
+
+
+class DateOfBirthElement(BaseElement):
+    elementType: Literal["date-of-birth"]
+    props: DateOfBirthProps
+
+
+class FileUploadProps(BaseProps):
+    multiple: bool = False
+    maxSize: int = 10
+    allowedTypes: str = "*"
+
+
+class FileUploadElement(BaseElement):
+    elementType: Literal["file-upload"]
+    props: FileUploadProps
+
+
+class RatingProps(BaseProps):
+    maxRating: int = 5
+
+
+class RatingElement(BaseElement):
+    elementType: Literal["rating"]
+    props: RatingProps
+
+
+class ButtonProps(BaseModel):
+    label: str
+    fullWidth: bool = False
+    align: str = "center"
+    subText: str = ""
+    customWidth: str = ""
+    fontFamily: str = "System UI"
+    fontSize: int = 14
+    fontWeight: int = 600
+    textColor: str = "#ffffff"
+    bgColor: str = "#3b82f6"
+    borderWidth: int = 0
+    borderStyle: str = "solid"
+    borderColor: str = "#3b82f6"
+    borderRadius: int = 8
+    padTop: int = 12
+    padRight: int = 24
+    padBottom: int = 12
+    padLeft: int = 24
+    shadowX: int = 0
+    shadowY: int = 2
+    shadowBlur: int = 4
+    shadowSpread: int = 0
+    shadowColor: str = "rgba(0,0,0,0.1)"
+
+
+class ButtonElement(BaseElement):
+    elementType: Literal["button"]
+    props: ButtonProps
+
+
+CanvasElement = Union[
+    FullNameElement,
+    EmailElement,
+    PhoneElement,
+    MultiLineElement,
+    DateOfBirthElement,
+    FileUploadElement,
+    RatingElement,
+    ButtonElement
+]
+
 
 
 class ImageSchema(BaseModel):
