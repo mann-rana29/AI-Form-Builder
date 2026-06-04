@@ -1,0 +1,171 @@
+{
+    "id": "form-d5beb45a1d484b208f20e23de6e935cc",
+       "form_data": {
+        "name": "Untitled Form-20260513-120950",
+        "updated_by": "User",
+         "canvas_state": [
+            {
+                "id": "el-fullname-1778654391504",
+                "elementType": "full-name",
+                "props": {
+                    "label": "Full Name",
+                    "required": false,
+                    "hidden": false,
+                    "placeholder": "Enter your full name",
+                    "shortLabel": "",
+                    "queryKey": "fullName",
+                    "width": 100,
+                    "minLength": 0,
+                    "maxLength": 100,
+                    "autocomplete": "name"
+                }
+            },
+            {
+                "id": "el-lastname-1778654392537",
+                "elementType": "last-name",
+                "props": {
+                    "label": "Last Name",
+                    "required": false,
+                    "hidden": false,
+                    "placeholder": "Enter last name",
+                    "shortLabel": "",
+                    "queryKey": "lastName",
+                    "width": 100,
+                    "minLength": 0,
+                    "maxLength": 50,
+                    "autocomplete": "family-name"
+                }
+            },
+            {
+                "id": "el-phone-1778654393786",
+                "elementType": "phone",
+                "props": {
+                    "label": "Phone",
+                    "required": false,
+                    "hidden": false,
+                    "placeholder": "Enter phone number",
+                    "shortLabel": "We will only use this to contact you about your order.",
+                    "queryKey": "userPhone",
+                    "width": 100,
+                    "enableCountryPicker": true,
+                    "countryCode": "+1",
+                    "validatePhone": false
+                }
+            },
+            {
+                "id": "el-submit-1778654395201",
+                "elementType": "button",
+                "props": {
+                    "label": "",
+                    "subText": "",
+                    "fullWidth": false,
+                    "customWidth": "",
+                    "align": "center",
+                    "fontFamily": "System UI",
+                    "fontSize": 14,
+                    "fontWeight": 600,
+                    "textColor": "#ffffff",
+                    "bgColor": "#3b82f6",
+                    "borderWidth": 0,
+                    "borderStyle": "solid",
+                    "borderColor": "#3b82f6",
+                    "borderRadius": 8,
+                    "padTop": 12,
+                    "padRight": 24,
+                    "padBottom": 12,
+                    "padLeft": 24,
+                    "shadowX": 0,
+                    "shadowY": 2,
+                    "shadowBlur": 4,
+                    "shadowSpread": 0,
+                    "shadowColor": "rgba(0,0,0,0.1)"
+                }
+            }
+        ],
+        "ui_state": {
+            "isPreviewing": false,
+            "canvasView": "desktop",
+            "canvasColumns": 1,
+            "fieldSpacing": 16,
+            "labelAlignment": "left",
+            "showLabel": true,
+            "inputStyle": "box",
+            "formWidth": 650,
+            "labelWidth": 200,
+            "paddingTop": 40,
+            "paddingRight": 40,
+            "paddingBottom": 30,
+            "paddingLeft": 40,
+            "backgroundColor": "#ffffff",
+            "fontColor": "#000000",
+            "inputBackgroundColor": "#FFFFFF",
+            "backgroundImage": {
+                "file": null,
+                "url": ""
+            },
+            "headerImage": {
+                "file": null,
+                "url": ""
+            },
+            "borderWidth": 1,
+            "cornerRadius": 4,
+            "borderColor": "#D3D3D3",
+            "borderStyle": "solid",
+            "shadowColor": "#3B0E0E",
+            "shadowHorizontal": 0,
+            "shadowVertical": 0,
+            "shadowBlur": 0,
+            "shadowSpread": 0,
+            "inputFontColor": "#000000",
+            "activeTagColor": "#146C9D",
+            "inputBorderWidth": 1,
+            "inputBorderColor": "#D3D3D3",
+            "inputCornerRadius": 10,
+            "inputWidth": "Please Input",
+            "inputBorderStyle": "solid",
+            "inputPaddingTop": 10,
+            "inputPaddingRight": 20,
+            "inputPaddingBottom": 10,
+            "inputPaddingLeft": 20,
+            "inputShadowColor": "#CBCBCB",
+            "inputShadowHorizontal": 0,
+            "inputShadowVertical": 0,
+            "inputShadowBlur": 0,
+            "inputShadowSpread": 0,
+            "labelColor": "#000000",
+            "labelFontFamily": "Open Sans",
+            "labelFontSize": 14,
+            "labelFontWeight": 400,
+            "shortLabelColor": "#111111",
+            "shortLabelFontFamily": "Fredoka",
+            "shortLabelFontSize": 14,
+            "shortLabelFontWeight": 300,
+            "placeholderColor": "#74797B",
+            "placeholderFontFamily": "Noto Sans JP",
+            "placeholderFontSize": 14,
+            "placeholderFontWeight": 400
+        },
+        "public_html": "\n<form class=\"hide-scrollbar\" style=\"flex: 1 1 0%; padding: 40px 40px 30px; border-radius: 0px; min-height: 100%; overflow-y: visible; transition: 0.3s ease-in-out; background-color: rgb(255, 255, 255); position: relative;\"><div style=\"display: grid; grid-template-columns: repeat(1, 1fr); gap: 16px;\"><div><div draggable=\"true\" style=\"opacity: 1; cursor: move;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"width: 100%;\"><label style=\"font-size: 14px; display: block; margin-bottom: 6px; color: rgb(17, 17, 17); font-weight: 300; font-family: Fredoka;\">Full Name</label><input placeholder=\"Enter your full name\" id=\"el-fullname-1778654391504\" data-field-id=\"el-fullname-1778654391504\" data-field-label=\"Full Name\" aria-label=\"Full Name\" aria-invalid=\"false\" type=\"text\" value=\"\" name=\"el-fullname-1778654391504\" style=\"width: 100%; padding: 10px 20px; border: 1px solid rgb(211, 211, 211); border-radius: 10px; background-color: rgb(255, 255, 255); box-shadow: rgb(203, 203, 203) 0px 0px 0px 0px; font-size: 14px; font-family: &quot;Noto Sans JP&quot;; font-weight: 400; color: rgb(0, 0, 0); outline: none; transition: border-color 0.2s;\"></div></div></div></div></div><div><div draggable=\"true\" style=\"opacity: 1; cursor: move;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"width: 100%;\"><label style=\"font-size: 14px; display: block; margin-bottom: 6px; color: rgb(17, 17, 17); font-weight: 300; font-family: Fredoka;\">Last Name</label><input placeholder=\"Enter last name\" id=\"el-lastname-1778654392537\" data-field-id=\"el-lastname-1778654392537\" data-field-label=\"Last Name\" aria-label=\"Last Name\" aria-invalid=\"false\" type=\"text\" value=\"\" name=\"el-lastname-1778654392537\" style=\"width: 100%; padding: 10px 20px; border: 1px solid rgb(211, 211, 211); border-radius: 10px; background-color: rgb(255, 255, 255); box-shadow: rgb(203, 203, 203) 0px 0px 0px 0px; font-size: 14px; font-family: &quot;Noto Sans JP&quot;; font-weight: 400; color: rgb(0, 0, 0); outline: none; transition: border-color 0.2s;\"></div></div></div></div></div><div><div draggable=\"true\" style=\"opacity: 1; cursor: move;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"width: 100%;\"><label style=\"font-size: 14px; display: block; margin-bottom: 6px; color: rgb(17, 17, 17); font-weight: 300; font-family: Fredoka;\">Phone</label><div style=\"display: flex; align-items: center; border: 1px solid rgb(211, 211, 211); border-radius: 10px; background-color: rgb(255, 255, 255); box-shadow: rgb(203, 203, 203) 0px 0px 0px 0px; overflow: hidden; transition: border-color 0.2s;\"><div style=\"position: relative; display: flex; align-items: center; justify-content: center; background-color: rgb(248, 250, 252); min-width: 70px; width: 70px; box-shadow: rgb(211, 211, 211) -1px 0px 0px 0px inset;\"><select aria-label=\"Country code\" style=\"width: 100%; padding: 8px 18px 8px 6px; font-size: 13px; text-align: center; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background-color: transparent; color: rgb(0, 0, 0); appearance: none; cursor: default; outline: none;\"><option value=\"+91\">+91</option><option value=\"+1\">+1</option><option value=\"+44\">+44</option><option value=\"+61\">+61</option><option value=\"+49\">+49</option><option value=\"+33\">+33</option><option value=\"+86\">+86</option><option value=\"+81\">+81</option><option value=\"+55\">+55</option></select><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\" style=\"position: absolute; right: 4px; pointer-events: none; color: rgb(107, 114, 128); width: 14px; height: 14px;\"><path d=\"m6 9 6 6 6-6\"></path></svg></div><input placeholder=\"Enter phone number\" inputmode=\"numeric\" pattern=\"[0-9]*\" minlength=\"10\" maxlength=\"10\" id=\"el-phone-1778654393786\" data-field-id=\"el-phone-1778654393786\" data-field-label=\"Phone\" aria-label=\"Phone\" aria-invalid=\"false\" type=\"tel\" value=\"\" name=\"el-phone-1778654393786\" style=\"flex: 1 1 0%; padding: 10px 20px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background-color: transparent; outline: none; width: 100%; color: rgb(0, 0, 0); font-size: 14px; font-family: &quot;Noto Sans JP&quot;; font-weight: 400;\"></div><small style=\"font-size: 14px; color: rgb(17, 17, 17); font-family: Fredoka; font-weight: 300; margin-top: 6px; display: block;\">We will only use this to contact you about your order.</small></div></div></div></div></div><div><div draggable=\"true\" style=\"opacity: 1; cursor: move;\"><div style=\"border: 2px solid transparent; border-radius: 8px; position: relative; cursor: pointer; background-color: transparent; transition: 0.2s ease-in-out;\"><div style=\"display: flex; justify-content: center; border: 2px solid transparent; border-radius: 8px; transition: border-color 0.2s; position: relative; margin-top: 20px;\"><div><button type=\"submit\" style=\"font-family: &quot;System UI&quot;; font-size: 14px; font-weight: 600; color: rgb(255, 255, 255); background-color: rgb(59, 130, 246); border: 0px solid rgb(59, 130, 246); border-radius: 8px; padding: 12px 24px; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px; width: auto; cursor: pointer; text-align: center; line-height: 1.5; opacity: 1; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;\">Submit</button></div></div></div></div></div></div></form>\n<script>\n(function () {\n  const formElement = document.querySelector('form');\n  const ratingStars = document.querySelectorAll('[data-rating-value]');\n  if (!formElement) return;\n\n  // ⭐ RATING LOGIC\n  ratingStars.forEach(star => {\n    star.addEventListener('click', () => {\n      const fieldId = star.getAttribute('data-field-id');\n      const value = star.getAttribute('data-rating-value');\n\n      let hidden = document.querySelector(\n        'input[type=\"hidden\"][data-field-id=\"' + fieldId + '\"]'\n      );\n\n      if (!hidden) {\n        hidden = document.createElement('input');\n        hidden.type = 'hidden';\n        hidden.setAttribute('data-field-id', fieldId);\n        hidden.setAttribute('data-element-type', 'rating');\n        hidden.name = fieldId;\n        formElement.appendChild(hidden);\n      }\n\n      hidden.value = value;\n\n      const allStars = document.querySelectorAll(\n        '[data-field-id=\"' + fieldId + '\"][data-rating-value]'\n      );\n\n      allStars.forEach(s => {\n        const starValue = s.getAttribute('data-rating-value');\n        const svg = s.querySelector('svg');\n        if (!svg) return;\n\n        if (Number(starValue) <= Number(value)) {\n          svg.style.fill = '#fbbf24';\n          svg.style.stroke = '#fbbf24';\n        } else {\n          svg.style.fill = 'none';\n          svg.style.stroke = '#d1d5db';\n        }\n      });\n    });\n  });\n\n  // 📞 PHONE VALIDATION\n  const phoneInputs = formElement.querySelectorAll('input[type=\"tel\"]');\n  phoneInputs.forEach((input) => {\n    input.addEventListener('input', function () {\n      this.value = this.value.replace(/[^0-9]/g, '');\n    });\n\n    input.addEventListener('change', function () {\n      const value = this.value.trim();\n      const required = this.hasAttribute('required');\n\n      if (value && !/^[0-9]{10,15}$/.test(value)) {\n        this.setCustomValidity('Please enter a valid phone number (10-15 digits)');\n      } else if (!value && required) {\n        this.setCustomValidity('This field is required');\n      } else {\n        this.setCustomValidity('');\n      }\n    });\n  });\n\n  // 📁 STORE FILES GLOBALLY\n  window.__FORM_FILES__ = window.__FORM_FILES__ || {};\n\n  formElement.querySelectorAll('input[type=\"file\"]').forEach((input) => {\n    input.addEventListener('change', (e) => {\n      const fieldId =\n        input.getAttribute('data-field-id') || input.name || input.id;\n\n      if (e.target.files && e.target.files[0]) {\n        window.__FORM_FILES__[fieldId] = e.target.files[0];\n      }\n    });\n  });\n\n  // ☁️ UPLOAD FILE TO S3\n  async function uploadFileToS3(file) {\n    const fd = new FormData();\n    fd.append('file', file);\n\n    const res = await fetch(\n      'https://backend-internal.quantixone.com/api/forms/v1/forms-builder/forms/assets/upload/public',\n      {\n        method: 'POST',\n        body: fd,\n      }\n    );\n\n    const data = await res.json();\n    return data?.url;\n  }\n\n  // 🚀 SUBMIT HANDLER\n  formElement.addEventListener('submit', async function (e) {\n    e.preventDefault();\n\n    const formData = {};\n    const formElements = formElement.querySelectorAll(\n      'input, select, textarea, [data-field-id]'\n    );\n    const processedFields = new Set();\n\n    for (const element of formElements) {\n      const el = element;\n      const fieldId = el.getAttribute('data-field-id') || el.id || el.name;\n      const fieldLabel =\n        el.getAttribute('data-field-label') ||\n        el.getAttribute('aria-label') ||\n        fieldId;\n\n      if (!fieldId || processedFields.has(fieldId)) continue;\n\n      if (el.type === 'checkbox') {\n        const checkboxGroup = formElement.querySelectorAll(\n          `input[type=\"checkbox\"][data-field-id=\"${fieldId}\"]`\n        );\n\n        if (el.hasAttribute('data-block-id')) {\n          const allChecked = Array.from(checkboxGroup).every(cb => cb.checked);\n\n          formData[fieldId] = {\n            label: fieldLabel,\n            elementType: 'terms',\n            value: allChecked,\n          };\n        } else {\n          const checkedValues = Array.from(checkboxGroup)\n            .filter(cb => cb.checked)\n            .map(\n              cb =>\n                cb.value ||\n                cb.getAttribute('data-option-label') ||\n                cb.nextElementSibling?.textContent?.trim() ||\n                true\n            );\n\n          if (checkedValues.length) {\n            formData[fieldId] = {\n              label: fieldLabel,\n              elementType: 'checkbox',\n              value: checkedValues,\n            };\n          }\n        }\n\n        processedFields.add(fieldId);\n      } \n      else if (el.type === 'radio' && el.checked) {\n        formData[fieldId] = {\n          label: fieldLabel,\n          elementType: 'radio',\n          value:\n            el.value ||\n            el.getAttribute('data-option-label') ||\n            el.nextElementSibling?.textContent?.trim(),\n        };\n        processedFields.add(fieldId);\n      } \n      else if (el.tagName === 'SELECT') {\n        formData[fieldId] = {\n          label: fieldLabel,\n          elementType: 'select',\n          value: el.options[el.selectedIndex]?.text || el.value,\n        };\n        processedFields.add(fieldId);\n      } \n      else if (el.type === 'file') {\n        if (window.__FORM_FILES__[fieldId]) {\n          const uploadedUrl = await uploadFileToS3(\n            window.__FORM_FILES__[fieldId]\n          );\n\n          formData[fieldId] = {\n            label: fieldLabel,\n            elementType: 'file',\n            value: uploadedUrl,\n          };\n\n          processedFields.add(fieldId);\n        }\n      } \n      else if (el.type === 'hidden' && el.value) {\n        formData[fieldId] = {\n          label: fieldLabel,\n          elementType: el.getAttribute('data-element-type') || 'hidden',\n          value: el.value,\n        };\n        processedFields.add(fieldId);\n      } \n      else if (\n        (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') &&\n        el.type !== 'file' &&\n        el.type !== 'hidden' &&\n        el.value\n      ) {\n        formData[fieldId] = {\n          label: fieldLabel,\n          elementType: el.type || 'text',\n          value: el.value,\n        };\n        processedFields.add(fieldId);\n      }\n    }\n\n    try {\n      const submitButton = formElement.querySelector('button[type=\"submit\"]');\n      if (submitButton) {\n        submitButton.disabled = true;\n        submitButton.textContent = 'Submitting...';\n      }\n\n      const params = new URLSearchParams();\n      const submittedBy =\n        formElement.getAttribute('data-submitted-by') || window.submittedBy || '';\n\n      if (submittedBy.trim()) {\n        params.append('submitted_by', submittedBy.trim());\n      }\n\n      const id = window.location.pathname.split('/').filter(Boolean).pop();\n\n      const submitUrl =\n        'https://api-backend-dev.quantixone.com/api/forms-builder-service/v1/forms/public/' +\n        id +\n        '/submit' +\n        (params.toString() ? '?' + params.toString() : '');\n\n      const response = await fetch(submitUrl, {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(formData),\n      });\n\n      if (!response.ok) throw new Error('Submission failed');\n\n      await response.json();\n      alert('Form submitted successfully!');\n      formElement.reset();\n\n      if (submitButton) {\n        submitButton.disabled = false;\n        submitButton.textContent = 'Submit';\n      }\n    } catch (error) {\n      console.error(error);\n      alert('Failed to submit form');\n\n      const submitButton = formElement.querySelector('button[type=\"submit\"]');\n      if (submitButton) {\n        submitButton.disabled = false;\n        submitButton.textContent = 'Submit';\n      }\n    }\n  });\n})();\n</script>\n"
+    },
+    "product_type": "form",
+    "version": 1,
+    "created_by": {
+        "source": "api",
+        "channel": "http",
+        "source_id": "d133ddca-b0c1-70c9-d0b7-ecc6e8fcc6df",
+        "source_name": "Praveen Raj",
+        "timestamp": "2026-05-13T06:39:59.181000"
+    },
+    "updated_by": {
+        "source": "api",
+        "channel": "http",
+        "source_id": "d133ddca-b0c1-70c9-d0b7-ecc6e8fcc6df",
+        "source_name": "Praveen Raj",
+        "timestamp": "2026-05-13T06:39:59.181000"
+    },
+    "deleted_by": null,
+    "is_deleted": false,
+    "date_deleted": null,
+    "date_added": "2026-05-13T12:09:59.184000+05:30",
+    "date_updated": "2026-05-13T12:09:59.472000+05:30"
+}
