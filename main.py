@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from typing import  List, Optional
 from dotenv import load_dotenv
@@ -8,6 +9,7 @@ import json
 from prompt_config import FORM_BUILDER_PROMPT
 from schema import CanvasElement , UiStateSchema
 
+
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
@@ -15,12 +17,18 @@ BASE_URL = os.getenv("BASE_URL")
 
 app = FastAPI()
 
+#temporary storage for forms
+FORM_STORE = {}
+
 Client = AsyncOpenAI(
     api_key= API_KEY,
     base_url= BASE_URL
 )
 
 SYSTEM_INSTRUCTION = FORM_BUILDER_PROMPT
+
+class RequestModel(BaseModel):
+    query : str
 
 class ResponseModel(BaseModel):
     success: bool = False
@@ -39,18 +47,18 @@ def ping():
     }
 
 @app.post("/forms/generate", response_model=ResponseModel)
-async def generate_form(request: str):
+async def generate_form(request: RequestModel):
     response = await Client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": SYSTEM_INSTRUCTION},
-            {"role": "user", "content": request}
+            {"role": "user", "content": request.query}
         ],
-        temperature=0.2
+        temperature=0.5,
+        max_tokens=4000
     )
 
     output = response.choices[0].message.content
-    # print("Raw output:", output)
 
     # Strip markdown code blocks if present
     if output.startswith("```"):
@@ -66,6 +74,9 @@ async def generate_form(request: str):
 
     try:
         parsed_output = json.loads(output)
+
+        FORM_STORE[1] = parsed_output
+        
         return parsed_output
 
     except Exception as e:
@@ -78,3 +89,18 @@ async def generate_form(request: str):
             "ui_state" : None,
             "public_html" : ""
         }
+
+@app.get("/form/preview/1")
+async def preview_form():
+    form = FORM_STORE.get(1)
+
+    if not form:
+        return HTMLResponse(
+            content = "<h1>Form not found</h1>",
+            status_code=404
+        )
+    
+    return HTMLResponse(
+        content= form["public_html"],
+        status_code=200
+    )

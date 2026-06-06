@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional, Any, Union, Literal
+from typing import Optional, Any, Union, Literal, List
 
 
 class BaseElement(BaseModel):
@@ -7,100 +7,357 @@ class BaseElement(BaseModel):
     elementType: str
 
 
-class BaseProps(BaseModel):
+# Personal Info Field
+
+class PersonalFieldProps(BaseModel):
     label: str
     required: bool = False
     hidden: bool = False
     width: int = 100
 
-
-class FullNameProps(BaseProps):
+class FullNameProps(PersonalFieldProps):
     placeholder: str
     shortLabel: str
     queryKey: str
     minLength: int = 0
     maxLength: int = 100
     autocomplete: str = ""
-
 
 class FullNameElement(BaseElement):
     elementType: Literal["full-name"]
     props: FullNameProps
 
+class FirstNameElement(BaseElement):
+    elementType: Literal["first-name"]
+    props: FullNameProps
 
-class EmailProps(BaseProps):
+class LastNameElement(BaseElement):
+    elementType: Literal["last-name"]
+    props: FullNameProps
+
+class PhoneProps(PersonalFieldProps):
     placeholder: str
     shortLabel: str
     queryKey: str
-    minLength: int = 0
-    maxLength: int = 100
-    autocomplete: str = ""
-
-
-class EmailElement(BaseElement):
-    elementType: Literal["email"]
-    props: EmailProps
-
-
-class PhoneProps(BaseProps):
-    placeholder: str
-    shortLabel: str
-    queryKey: str
-    minLength: int = 0
-    maxLength: int = 20
-    autocomplete: str = ""
     enableCountryPicker: bool = True
     countryCode: str = "+1"
     validatePhone: bool = False
-
 
 class PhoneElement(BaseElement):
     elementType: Literal["phone"]
     props: PhoneProps
 
-
-class MultiLineProps(BaseProps):
+class EmailProps(PersonalFieldProps):
     placeholder: str
     shortLabel: str
     queryKey: str
-    rows: int = 5
-    minLength: int = 0
-    maxLength: int = 2000
+    validateEmail: bool = False
 
+class EmailElement(BaseElement):
+    elementType: Literal["email"]
+    props: EmailProps
+
+class DatePickerProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    dateFormat: str
+    dateSeparator: str = "-"
+    disablePicker: bool = False
+
+class DatePickerElement(BaseElement):
+    elementType: Literal["date-picker"]
+    props: DatePickerProps
+
+
+# Text Field
+
+class TextFieldProps(BaseModel):
+    label: str
+    required: bool = False
+    shortLabel: str = ""
+    queryKey: str
+    width: int = 100
+    customFieldName: str = ""
+    uniqueKey: str = ""
+
+class SingleLineProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str
+
+class SingleLineElement(BaseElement):
+    elementType: Literal["single-line"]
+    props: SingleLineProps
+
+class MultiLineProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str
+    rows: int = 4
 
 class MultiLineElement(BaseElement):
     elementType: Literal["multi-line"]
     props: MultiLineProps
 
+class TextBoxRow(BaseModel):
+    id: str
+    label: str
+    value : str
 
-class DateOfBirthProps(BaseProps):
-    queryKey: str
+class TextBoxListProps(TextFieldProps):
+    textBoxRows : List[TextBoxRow]
+
+class TextBoxListElement(BaseElement):
+    elementType : Literal["text-box-list"]
+    props: TextBoxListProps
 
 
-class DateOfBirthElement(BaseElement):
-    elementType: Literal["date-of-birth"]
-    props: DateOfBirthProps
+#Customized
+
+class TncBlock(BaseModel):
+    id: str
+    content: str = "<p>I agree to terms &amp; conditions provided by the company. By providing my phone number, I agree to receive text messages from the business.</p>"
+
+class TcProps(BaseModel):
+    label: str
+    required : bool = False
+    queryKey : str
+    textColor : str
+    linkColor : str
+    tncBlocks : List[TncBlock]
+
+class TcElement(BaseElement):
+    elementType: Literal["t-c"]
+    props: TcProps
+
+class ScoreProps(BaseModel):
+    label: str
+    placeholder : str
+    required : bool = False
+
+class ScoreElement(BaseElement):
+    elementType: Literal["score"]
+    props : ScoreProps
+
+class Padding(BaseModel):
+    top : int
+    right : int
+    bottom: int
+    left : int
+
+class Shadow(BaseModel):
+    color: str
+    horizontal: int
+    vertical : int
+    blur : int
+    spread : int
+
+class TextBlockProps(BaseModel):
+    label : str
+    content: str
+    backgroundColor: str
+    fontColor : str
+    fontFamily: str
+    fontSize : int
+    fontWeight: int
+    border : int
+    borderColor : str
+    borderType: str
+    cornerRadius : int
+    padding: Padding
+    shadow : Shadow
+
+class TextBlock(BaseElement):
+    elementType : Literal["text-block"]
+    props : TextBlockProps
 
 
-class FileUploadProps(BaseProps):
+#Other ELements
+
+class ImageProps(BaseModel):
+    label : str
+    src : str
+    alt : str
+    spanFullWidth : bool = True
+    widthPx : int
+    heightPx : Optional[int] = None
+    alignment : str
+
+class ImageElement(BaseElement):
+    elementType : Literal["image"]
+    props : ImageProps
+    
+class FileUploadProps(BaseModel):
+    label : str
+    required : bool = False
     multiple: bool = False
     maxSize: int = 10
-    allowedTypes: str = "*"
-
+    allowedTypes: str = "pdf, png, docx"
+    spanFullWidth : bool = True
 
 class FileUploadElement(BaseElement):
     elementType: Literal["file-upload"]
     props: FileUploadProps
 
 
-class RatingProps(BaseProps):
-    maxRating: int = 5
+# Address Fields
 
+class CityProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    minLength: int = 0
+    maxLength: int = 100
+
+class CityElement(BaseElement):
+    elementType: Literal["city"]
+    props: CityProps
+
+class StateProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str = ""
+    queryKey: str = ""
+
+class StateElement(BaseElement):
+    elementType: Literal["state"]
+    props: StateProps
+
+class CountryProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str = ""
+    queryKey: str = ""
+
+class CountryElement(BaseElement):
+    elementType: Literal["country"]
+    props: CountryProps
+
+class PostalCodeProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str = ""
+    queryKey: str = ""
+
+class PostalCodeElement(BaseElement):
+    elementType: Literal["postal-code"]
+    props: PostalCodeProps
+
+class OrganizationProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    minLength: int = 0
+    maxLength: int = 100
+
+class OrganizationElement(BaseElement):
+    elementType: Literal["organization"]
+    props: OrganizationProps
+
+class WebsiteProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    validateUrl: bool = False
+
+class WebsiteElement(BaseElement):
+    elementType: Literal["website"]
+    props: WebsiteProps
+
+
+# Number Fields
+
+class NumberProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str
+    minValue: int = 0
+    maxValue: int = 999999
+
+class NumberElement(BaseElement):
+    elementType: Literal["number"]
+    props: NumberProps
+
+class MonetaryProps(PersonalFieldProps):
+    placeholder: str
+    shortLabel: str
+    queryKey: str
+    currency: str = "$"
+    currencyPosition: str = "before"
+    alignment: str = "left"
+    minValue: int = 0
+    maxValue: int = 999999
+
+class MonetaryElement(BaseElement):
+    elementType: Literal["monetary"]
+    props: MonetaryProps
+
+
+# Selection Fields
+
+class SelectOption(BaseModel):
+    id: str
+    label: str
+    value: str
+
+class SelectProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str = ""
+    selectOptions: List[SelectOption]
+    selected: str = ""
+
+class SelectElement(BaseElement):
+    elementType: Literal["select"]
+    props: SelectProps
+
+class CheckboxOption(BaseModel):
+    id: str
+    label: str
+    checked: bool = False
+
+class CheckboxProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str = ""
+    options: List[CheckboxOption]
+
+class CheckboxElement(BaseElement):
+    elementType: Literal["checkbox"]
+    props: CheckboxProps
+
+class RadioOption(BaseModel):
+    id: str
+    label: str
+    checked: bool = False
+
+class RadioProps(TextFieldProps):
+    hidden: bool = False
+    placeholder: str = ""
+    radioOptions: List[RadioOption]
+
+class RadioElement(BaseElement):
+    elementType: Literal["radio"]
+    props: RadioProps
+
+
+# Rating Field
+
+class RatingProps(BaseModel):
+    label: str
+    required: bool = False
+    shortLabel: str = ""
+    width: int = 100
+    ratingIcon: str = "star"
+    ratingAlign: str = "center"
+    ratingCount: int = 5
+    ratingMinLabel: str = ""
+    ratingMaxLabel: str = ""
+    ratingStoreMode: str = "absolute"
+    ratingColorSelected: str = "#facc15"
+    ratingColorUnselected: str = "#e5e7eb"
+    customFieldName: str = ""
+    uniqueKey: str = ""
 
 class RatingElement(BaseElement):
     elementType: Literal["rating"]
     props: RatingProps
 
+
+# Button Field
 
 class ButtonProps(BaseModel):
     label: str
@@ -127,28 +384,61 @@ class ButtonProps(BaseModel):
     shadowSpread: int = 0
     shadowColor: str = "rgba(0,0,0,0.1)"
 
-
 class ButtonElement(BaseElement):
     elementType: Literal["button"]
     props: ButtonProps
 
+# class MonetaryProps(BaseModel):
+#     label: str
+#     required : bool = False
+#     placeholder : str
+#     shortLabel : str
+#     queryKey : str
+#     width : int
+#     currency : str = "$"
+#     currencyPosition : str
+#     alignment : str
+
+# class MonetaryElement(BaseElement):
+#     elementType : Literal["monetary"]
+#     props : MonetaryProps
+
 
 CanvasElement = Union[
     FullNameElement,
+    FirstNameElement,
+    LastNameElement,
     EmailElement,
     PhoneElement,
+    DatePickerElement,
+    CityElement,
+    StateElement,
+    CountryElement,
+    PostalCodeElement,
+    OrganizationElement,
+    WebsiteElement,
+    SingleLineElement,
     MultiLineElement,
-    DateOfBirthElement,
-    FileUploadElement,
+    TextBoxListElement,
+    SelectElement,
+    CheckboxElement,
+    RadioElement,
+    NumberElement,
+    MonetaryElement,
     RatingElement,
-    ButtonElement
+    TextBlock,
+    ImageElement,
+    FileUploadElement,
+    TcElement,
+    ScoreElement,
+    ButtonElement,
 ]
 
 
 
 class ImageSchema(BaseModel):
     file: Optional[Any] = None
-    url: str = ""
+    url: Optional[str] = None
 
 
 class UiStateSchema(BaseModel):
