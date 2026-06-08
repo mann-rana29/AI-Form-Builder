@@ -1,0 +1,186 @@
+[
+  {
+    "topic": "Real Estate",
+    "prompt": "Create a vacation property management contact form for guests to inquire about bookings, amenities, maintenance requests, and rental availability."
+  },
+  {
+    "topic": "Real Estate",
+    "prompt": "Build a property investment consultation form for users interested in investing in commercial and residential real estate."
+  },
+  {
+    "topic": "E-Commerce",
+    "prompt": "Create a purchase order form for bulk office equipment orders including shipping details and payment information."
+  },
+  {
+    "topic": "E-Commerce",
+    "prompt": "Generate a product order form for customers purchasing skincare products online with quantity and shipping information."
+  },
+  {
+    "topic": "E-Commerce",
+    "prompt": "Create a return request form where customers can upload damaged product images and explain the issue."
+  },
+  {
+    "topic": "HR",
+    "prompt": "Create a detailed intern hiring application form for a tech startup including resume upload, portfolio links, and coding experience."
+  },
+  {
+    "topic": "HR",
+    "prompt": "Build a complete employee onboarding form for newly hired remote employees including banking and identity verification details."
+  },
+  {
+    "topic": "HR",
+    "prompt": "Create an employee performance review form with ratings, manager comments, and improvement goals."
+  },
+  {
+    "topic": "HR",
+    "prompt": "Generate a leave request form for employees requesting vacation or sick leave."
+  },
+  {
+    "topic": "Real Estate",
+    "prompt": "Create a property inquiry form for luxury apartments in downtown New York."
+  },
+  {
+    "topic": "Real Estate",
+    "prompt": "Build a property listing submission form for real estate agents uploading residential properties."
+  },
+  {
+    "topic": "Real Estate",
+    "prompt": "Create a rental application form for tenants applying for furnished apartments."
+  },
+  {
+    "topic": "Events",
+    "prompt": "Generate an event registration form for a startup networking conference."
+  },
+  {
+    "topic": "Events",
+    "prompt": "Create a hotel reservation form for guests booking beach resort stays."
+  },
+  {
+    "topic": "Events",
+    "prompt": "Build a luxury wedding planning form including catering preferences, guest count, and venue selection."
+  },
+  {
+    "topic": "Events",
+    "prompt": "Create a conference feedback survey form for attendees to rate sessions and speakers."
+  },
+  {
+    "topic": "Finance",
+    "prompt": "Generate a loan application form for small business owners requesting startup funding."
+  },
+  {
+    "topic": "Finance",
+    "prompt": "Create an insurance quote request form for vehicle insurance."
+  },
+  {
+    "topic": "Finance",
+    "prompt": "Build a digital bank account opening form with identity verification and address details."
+  },
+  {
+    "topic": "Finance",
+    "prompt": "Generate an investment consultation booking form for high-net-worth clients."
+  },
+  {
+    "topic": "Technology",
+    "prompt": "Create a software demo request form for enterprise AI analytics software."
+  },
+  {
+    "topic": "Technology",
+    "prompt": "Generate a beta testing signup form for a new AI-powered productivity application."
+  },
+  {
+    "topic": "Technology",
+    "prompt": "Create an API access request form for developers integrating payment gateway APIs."
+  },
+  {
+    "topic": "Technology",
+    "prompt": "Build a technical support form for users reporting software bugs and feature requests."
+  },
+  {
+    "topic": "Non-Profit",
+    "prompt": "Generate a volunteer registration form for a local community cleanup drive."
+  },
+  {
+    "topic": "Non-Profit",
+    "prompt": "Create a secure donation form for an animal rescue NGO."
+  },
+  {
+    "topic": "Community",
+    "prompt": "Generate an RSVP form for a neighborhood cultural event."
+  },
+  {
+    "topic": "Community",
+    "prompt": "Build a membership application form for a local entrepreneur networking club."
+  },
+  {
+    "topic": "Survey",
+    "prompt": "Create a customer feedback survey form for a restaurant chain."
+  },
+  {
+    "topic": "Survey",
+    "prompt": "Generate a customer experience survey form for an airline booking platform."
+  },
+  {
+    "topic": "Survey",
+    "prompt": "Build a market research survey for smartphone purchasing habits among college students."
+  },
+  {
+    "topic": "Survey",
+    "prompt": "Create a website usability feedback survey for an e-commerce platform redesign."
+  },
+  {
+    "topic": "Healthcare",
+    "prompt": "Generate a patient registration form for a multi-specialty medical clinic."
+  },
+  {
+    "topic": "Healthcare",
+    "prompt": "Create an appointment booking form for dental consultations."
+  },
+  {
+    "topic": "Healthcare",
+    "prompt": "Build a preliminary health survey form collecting symptoms, allergies, and lifestyle habits."
+  },
+  {
+    "topic": "Education",
+    "prompt": "Generate a university student registration form for international applicants."
+  },
+  {
+    "topic": "Education",
+    "prompt": "Create a course enrollment form for an online machine learning bootcamp."
+  },
+  {
+    "topic": "Education",
+    "prompt": "Build an assignment submission form where students can upload PDFs and provide notes."
+  },
+  {
+    "topic": "Education",
+    "prompt": "Generate a teacher job application form for high school mathematics faculty recruitment."
+  },
+  {
+    "topic": "Complex Enterprise",
+    "prompt": "Create a multi-step enterprise SaaS onboarding form with company details, employee size, integration requirements, security preferences, and billing information."
+  },
+  {
+    "topic": "Complex Enterprise",
+    "prompt": "Generate a startup accelerator application form similar to Y Combinator including founder details, traction metrics, funding stage, and product description."
+  },
+  {
+    "topic": "Complex Healthcare",
+    "prompt": "Create a mental health therapy intake form with emergency contact details, symptoms, medication history, and preferred consultation timings."
+  },
+  {
+    "topic": "Complex Research",
+    "prompt": "Build a UX research participant screening form with demographics, device usage habits, and consent agreements."
+  },
+  {
+    "topic": "Edge Case",
+    "prompt": "Create a premium dark-themed hotel booking form with elegant UI styling and luxury branding."
+  },
+  {
+    "topic": "Edge Case",
+    "prompt": "Generate a multilingual scholarship application form for international engineering students."
+  },
+  {
+    "topic": "Edge Case",
+    "prompt": "Create a detailed hackathon registration form with team member management and GitHub profile links."
+  }
+]
