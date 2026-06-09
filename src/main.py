@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 import os
 from openai import AsyncOpenAI
 import json
-from prompt_config import FORM_BUILDER_PROMPT
-from schema import CanvasElement , UiStateSchema
+from src.services.prompt_config import FORM_BUILDER_PROMPT
+from src.schemas.schema import CanvasElement , UiStateSchema
 from urllib.parse import quote
 
 with open("templates.json", "r", encoding="utf-8") as f:
